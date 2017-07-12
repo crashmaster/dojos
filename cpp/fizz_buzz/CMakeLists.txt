@@ -9,5 +9,5 @@ endif()
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-add_executable(test_fizz_buzz test_fizz_buzz.cpp)
+add_executable(test_fizz_buzz test_fizz_buzz.cpp fizz_buzz.cpp)
 target_link_libraries(test_fizz_buzz ${GTEST_LIBRARIES} pthread)
