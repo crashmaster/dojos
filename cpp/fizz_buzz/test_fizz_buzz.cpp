@@ -2,7 +2,7 @@
 
 
 TEST(fizz_buzz, positive_case_where_output_equals_input) {
-  ::verify_test_values(TEST_VALUES_FOR_OUTPUT_EQUALS_INPUT_CASE);
+  verify_test_values(TEST_VALUES_FOR_OUTPUT_EQUALS_INPUT_CASE);
 }
 
 
