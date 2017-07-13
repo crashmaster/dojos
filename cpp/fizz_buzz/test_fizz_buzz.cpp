@@ -12,9 +12,9 @@ TEST(fizz_buzz, negative_case_where_output_equals_input) {
 }
 
 
-// TEST(fizz_buzz, where_input_results_in_fizz_output) {
-//   std::vector<input_t, output_t> test_values { 3 };
-// }
+TEST(fizz_buzz, where_input_results_in_fizz_output) {
+  verify_test_values(TEST_VALUES_FOR_INPUT_RESULTS_IN_FIZZ_CASE);
+}
 
 
 int main(int argc, char* argv[]) {

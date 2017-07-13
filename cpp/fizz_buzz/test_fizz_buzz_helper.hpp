@@ -36,10 +36,19 @@ test_values_t TEST_VALUES_FOR_OUTPUT_EQUALS_INPUT_CASE {
   {34, "34"},
 };
 
-// 3, 6, 9,
-// 12, 18,
-// 21, 24, 27,
-// 33, 36
+test_values_t TEST_VALUES_FOR_INPUT_RESULTS_IN_FIZZ_CASE {
+  {3, "FIZZ"},
+  {6, "FIZZ"},
+  {9, "FIZZ"},
+  {12, "FIZZ"},
+  {18, "FIZZ"},
+  {21, "FIZZ"},
+  {24, "FIZZ"},
+  {27, "FIZZ"},
+  {33, "FIZZ"},
+  {36, "FIZZ"},
+};
+
 
 test_values_t negate_test_values(const test_values_t& test_values) {
   test_values_t negative_input_test_values;
