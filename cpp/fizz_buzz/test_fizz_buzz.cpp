@@ -56,18 +56,18 @@ test_values_t negate_test_values(const test_values_t& test_values) {
 }
 
 
-void assert_fizz_buzz(const input_t input_number, const output_t& expected_output) {
+void assert_fizz_buzz(const test_value_t& test_value) {
+  input_t input_number;
+  output_t expected_output;
+  std::tie(input_number, expected_output) = test_value;
+
   ASSERT_EQ(expected_output, fizz_buzz(input_number));
 }
 
 
 void verify_test_values(const test_values_t& test_values) {
   for (auto test_value: test_values) {
-    input_t input_number;
-    output_t expected_output;
-
-    std::tie(input_number, expected_output) = test_value;
-    assert_fizz_buzz(input_number, expected_output);
+    assert_fizz_buzz(test_value);
   }
 }
 
