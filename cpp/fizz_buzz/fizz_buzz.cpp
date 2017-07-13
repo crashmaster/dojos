@@ -1,6 +1,8 @@
+#include <string>
+
 #include "fizz_buzz.hpp"
 
 
-int fizz_buzz(const int number) {
-  return 0;
+std::string fizz_buzz(const int number) {
+  return std::to_string(number);
 }
