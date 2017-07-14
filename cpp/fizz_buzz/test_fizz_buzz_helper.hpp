@@ -14,7 +14,7 @@ typedef std::pair<input_t, output_t> test_value_t;
 typedef std::vector<test_value_t> test_values_t;
 
 
-test_values_t TEST_VALUES_FOR_OUTPUT_EQUALS_INPUT_CASE {
+test_values_t TEST_VALUES_WHERE_OUTPUT_EQUALS_INPUT {
   {1, "1"},
   {2, "2"},
   {4, "4"},
@@ -36,17 +36,32 @@ test_values_t TEST_VALUES_FOR_OUTPUT_EQUALS_INPUT_CASE {
   {34, "34"},
 };
 
-test_values_t TEST_VALUES_FOR_INPUT_RESULTS_IN_FIZZ_CASE {
-  {3, "FIZZ"},
-  {6, "FIZZ"},
-  {9, "FIZZ"},
-  {12, "FIZZ"},
-  {18, "FIZZ"},
-  {21, "FIZZ"},
-  {24, "FIZZ"},
-  {27, "FIZZ"},
-  {33, "FIZZ"},
-  {36, "FIZZ"},
+test_values_t TEST_VALUES_WHERE_INPUT_RESULTS_IN_FIZZ {
+  {3, "Fizz"},
+  {6, "Fizz"},
+  {9, "Fizz"},
+  {12, "Fizz"},
+  {18, "Fizz"},
+  {21, "Fizz"},
+  {24, "Fizz"},
+  {27, "Fizz"},
+  {33, "Fizz"},
+  {36, "Fizz"},
+};
+
+test_values_t TEST_VALUES_WHERE_INPUT_RESULTS_IN_BUZZ {
+  {5, "Buzz"},
+  {10, "Buzz"},
+  {20, "Buzz"},
+  {25, "Buzz"},
+  {35, "Buzz"},
+};
+
+test_values_t TEST_VALUES_WHERE_INPUT_RESULTS_IN_FIZZ_BUZZ {
+  {15, "FizzBuzz"},
+  {30, "FizzBuzz"},
+  {45, "FizzBuzz"},
+  {60, "FizzBuzz"},
 };
 
 
