@@ -1,0 +1,56 @@
+#!/bin/bash
+
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOJOS_DIR="${DIR}/dojos"
+DOJO_TEMPLATE="${DIR}/dojo_template/template"
+
+function print_usage {
+    echo "Usage: $(basename ${0}) dojo_name"
+}
+
+function copy_and_rename_template {
+    local dojo_name="${1}"
+
+    echo -n "Copy template..."
+    cp -r "${DOJO_TEMPLATE}" "${DOJOS_DIR}"
+    mv "${DOJOS_DIR}/template" "${DOJOS_DIR}/${dojo_name}"
+    echo " [OK]"
+}
+
+function rename_files {
+    local dojo_name="${1}"
+
+    echo -n "Rename files..."
+    rename "s/dojo_name/${dojo_name}/g" "${DOJOS_DIR}/${dojo_name}/source/"*
+    echo " [OK]"
+}
+
+function replace_template_strings_in_files {
+    local dojo_name="${1}"
+    local dojo_name_camel_case=$(python -c "print '${1}'.replace('_', ' ').title().replace(' ', '')")
+
+    echo -n "Replace template strings in files..."
+    find "${DOJOS_DIR}/${dojo_name}" \
+        -type f \
+        -exec sed --in-place \
+            -e "s/%%dojo_name%%/${dojo_name}/g" \
+            -e "s/%%DojoName%%/${dojo_name_camel_case}/g" \
+        {} \;
+    echo " [OK]"
+}
+
+function main {
+    local dojo_name="${1}"
+
+    copy_and_rename_template ${dojo_name}
+    rename_files ${dojo_name}
+    replace_template_strings_in_files ${dojo_name}
+}
+
+[ ${#} -ne 1 ] && {
+    print_usage
+} || {
+    main "${1}"
+}
