@@ -4,7 +4,7 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOJOS_DIR="${DIR}/dojos"
-DOJO_TEMPLATE="${DIR}/dojo_template/template"
+DOJO_TEMPLATE="${DIR}/dojo_template"
 
 function print_usage {
     echo "Usage: $(basename ${0}) dojo_name"
@@ -15,7 +15,7 @@ function copy_and_rename_template {
 
     echo -n "Copy template..."
     cp -r "${DOJO_TEMPLATE}" "${DOJOS_DIR}"
-    mv "${DOJOS_DIR}/template" "${DOJOS_DIR}/${dojo_name}"
+    mv "${DOJOS_DIR}/dojo_template" "${DOJOS_DIR}/${dojo_name}"
     echo " [OK]"
 }
 
