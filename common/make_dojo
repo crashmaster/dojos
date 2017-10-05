@@ -49,8 +49,8 @@ function main {
     replace_template_strings_in_files ${dojo_name}
 }
 
-[ ${#} -ne 1 ] && {
+if [ ${#} -ne 1 ] || [ ${1} = '-h' ]; then
     print_usage
-} || {
+else
     main "${1}"
-}
+fi
