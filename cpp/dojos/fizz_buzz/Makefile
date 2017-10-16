@@ -28,7 +28,7 @@ all: compile
 clean: docker_build
 	@${DOCKER_RUN} ${CALL_RM_BUILD_DIR}
 
-compile: docker_build
+compile: make
 	@${DOCKER_RUN} ${CALL_MAKE}
 
 docker_build:
