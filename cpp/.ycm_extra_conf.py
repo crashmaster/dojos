@@ -5,7 +5,7 @@ FLAGS = [
     '-Werror',
     '-Weverything',
     '-fexceptions',
-    '-std=c++1y',
+    '-std=c++14',
     '-x', 'c++',
 ]
 

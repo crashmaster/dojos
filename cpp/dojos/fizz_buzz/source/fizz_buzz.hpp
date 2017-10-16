@@ -4,6 +4,7 @@
 #include <string>
 
 
+bool is_number_dividable_by(const int, const int);
 std::string fizz_buzz(const int);
 
 #endif
